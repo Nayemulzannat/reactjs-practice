@@ -16,6 +16,9 @@ export default function Countries() {
         };
 
         fetchData();
+
+
+        
     }, []);
 
     return (
