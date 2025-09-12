@@ -6,29 +6,26 @@ export default function Countries() {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await fetch('https://restcountries.com/v3.1/all');
+                const response = await fetch(
+                    'https://restcountries.com/v3.1/all?fields=name,cca3,flags,region,population'
+                );
                 const json = await response.json();
-                console.log("✅ Fetched data:", json);
                 setCountries(json);
             } catch (error) {
-                console.error("❌ Error fetching data:", error);
+                console.error("Error fetching data:", error);
             }
         };
-
         fetchData();
-
-
-        
     }, []);
 
     return (
         <div>
             <h2>Fetched Countries: {countries.length}</h2>
-            <ul>
+            <div style={{ display: "flex", flexWrap: "wrap" }}>
                 {countries.map((country) => (
                     <Country key={country.cca3} country={country} />
                 ))}
-            </ul>
+            </div>
         </div>
     );
 }
