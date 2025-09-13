@@ -20,7 +20,7 @@ export default function Countries() {
 
     return (
         <div>
-            <h2>Fetched Countries: {countries.length}</h2>
+            <h2>Total Country: {countries.length}</h2>
             <div style={{ display: "flex", flexWrap: "wrap" }}>
                 {countries.map((country) => (
                     <Country key={country.cca3} country={country} />
