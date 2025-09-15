@@ -14,7 +14,7 @@ function Country({ country }) {
       <img src={country.flags.png} alt={country.name.common} width="120" />
       <h3>{country.name.common}</h3>
       <p><strong>Region:</strong> {country.region}</p>
-      <p><strong>Population:</strong> {country.population.toLocaleString()}</p>
+      <p><strong>Populationn:</strong> {country.population.toLocaleString()}</p>
     </div>
   );
 }
