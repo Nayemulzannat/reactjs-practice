@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Country from './Country';
+import js from '@eslint/js';
 export default function Countries() {
     const [countries, setCountries] = useState([]);
 
@@ -10,6 +11,7 @@ export default function Countries() {
                     'https://restcountries.com/v3.1/all?fields=name,cca3,flags,region,population'
                 );
                 const json = await response.json();
+                
                 setCountries(json);
             } catch (error) {
                 console.error("Error fetching data:", error);
